@@ -95,8 +95,8 @@ public class Start extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Bots++;
-        if (Bots == 6) {
-            Bots = 5;
+        if (Bots == 5) {
+            Bots = 4;
         }
         jLabel1.setText(Integer.toString(Bots));
 

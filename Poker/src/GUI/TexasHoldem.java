@@ -14,6 +14,7 @@ public class TexasHoldem extends javax.swing.JFrame {
     int Cards = 0;
     int Card = 1;
     int Gender = 1;
+    static int Bots;
 
     /**
      * Creates new form TexasHoldem
@@ -219,7 +220,7 @@ public class TexasHoldem extends javax.swing.JFrame {
 
         Cards++;
         if (Cards == 1) {
-            for (int i = 1; i <= 5; i++) {
+            for (int i = 1; i <= Bots; i++) {
 
                 while (true) {
                     Gender = CardShuffle.ShuffleGender();
@@ -232,14 +233,20 @@ public class TexasHoldem extends javax.swing.JFrame {
                         P2C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
                         break;
                     } else if (i == 3 && luku == 0) {
-                        P3C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
-                        break;
+                        if (Bots == 2) {
+                            P3C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                            break;
+                        }
                     } else if (i == 4 && luku == 0) {
-                        P4C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
-                        break;
+                        if (Bots == 3) {
+                            P4C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                            break;
+                        }
                     } else if (i == 5 && luku == 0) {
-                        P5C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
-                        break;
+                        if (Bots == 4) {
+                            P5C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                            break;
+                        }
                     }
 
                 }
@@ -275,7 +282,7 @@ public class TexasHoldem extends javax.swing.JFrame {
             P5B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
             P5B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
         } else if (Cards == 2) {
-            
+
             while (true) {
                 Gender = CardShuffle.ShuffleGender();
                 Card = CardShuffle.ShuffleNum();
@@ -329,7 +336,7 @@ public class TexasHoldem extends javax.swing.JFrame {
             jToggleButton1.setVisible(true);
             jButton2.setVisible(false);
             Cards = 0;
-            
+
             P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
             P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
             P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
@@ -340,6 +347,10 @@ public class TexasHoldem extends javax.swing.JFrame {
             P5B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    public static void Bots(int val) {
+        Bots = val;
+    }
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
