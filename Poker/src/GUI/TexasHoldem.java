@@ -65,10 +65,10 @@ public class TexasHoldem extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 800, 110));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/2_Hertta_koko.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/2_Risti.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 206, -1, 70));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/2_Hertta_koko.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/2_Hertta.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 206, -1, 70));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/CardTable.png"))); // NOI18N
