@@ -80,6 +80,7 @@ public class CardTest {
             if (CardNum == 1) {
                 p1Card1 = Num;
                 p1luku1 = Gender;
+                return 0;
             } else if (CardNum == 2) {
                 if (p1Card1 == Num && p1luku1 == Gender) {
                     return 1.2;
