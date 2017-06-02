@@ -11,6 +11,8 @@ package GUI;
  */
 public class Start extends javax.swing.JFrame {
 
+    int Bots = 1;
+
     /**
      * Creates new form Start
      */
@@ -32,6 +34,7 @@ public class Start extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -46,17 +49,31 @@ public class Start extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("0");
+        jLabel1.setText("1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 160, 28, 24));
 
         jButton2.setText("<");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, -1, -1));
 
         jButton3.setText(">");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 160, -1, -1));
 
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 153, 130, 40));
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        jLabel3.setText("Bots:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, -1, -1));
 
         setSize(new java.awt.Dimension(416, 339));
         setLocationRelativeTo(null);
@@ -67,6 +84,23 @@ public class Start extends javax.swing.JFrame {
         this.setVisible(false);
         new TexasHoldem().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Bots--;
+        if (Bots <= 0) {
+            Bots = 1;
+        }
+        jLabel1.setText(Integer.toString(Bots));
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Bots++;
+        if (Bots == 6) {
+            Bots = 5;
+        }
+        jLabel1.setText(Integer.toString(Bots));
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,5 +143,6 @@ public class Start extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
