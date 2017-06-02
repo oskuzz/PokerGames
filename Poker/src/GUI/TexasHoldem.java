@@ -11,14 +11,19 @@ package GUI;
  */
 public class TexasHoldem extends javax.swing.JFrame {
 
+    int Cards = 0;
+
     /**
      * Creates new form TexasHoldem
      */
     public TexasHoldem() {
         initComponents();
         jButton2.setVisible(false);
-        jLabel3.setVisible(false);
-        jLabel4.setVisible(false);
+        Card1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+        Card2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+        Card3.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+        Card4.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+        Card5.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
 
     }
 
@@ -32,10 +37,13 @@ public class TexasHoldem extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        Card5 = new javax.swing.JLabel();
+        Card4 = new javax.swing.JLabel();
+        Card3 = new javax.swing.JLabel();
+        Card2 = new javax.swing.JLabel();
+        Card1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -47,14 +55,6 @@ public class TexasHoldem extends javax.swing.JFrame {
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Play");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 70, -1, -1));
-
         jButton2.setText("OK");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,13 +63,30 @@ public class TexasHoldem extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 30, -1, -1));
 
+        jToggleButton1.setText("Play");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 70, -1, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 800, 110));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/2_Risti.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 206, -1, 70));
+        Card5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/2_Risti.png"))); // NOI18N
+        getContentPane().add(Card5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 206, -1, 70));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/2_Hertta.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 206, -1, 70));
+        Card4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/2_Risti.png"))); // NOI18N
+        getContentPane().add(Card4, new org.netbeans.lib.awtextra.AbsoluteConstraints(426, 206, -1, 70));
+
+        Card3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/2_Risti.png"))); // NOI18N
+        getContentPane().add(Card3, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 206, -1, 70));
+
+        Card2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/2_Risti.png"))); // NOI18N
+        getContentPane().add(Card2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 206, -1, 70));
+
+        Card1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/2_Hertta.png"))); // NOI18N
+        getContentPane().add(Card1, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 206, -1, 70));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/CardTable.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -81,18 +98,41 @@ public class TexasHoldem extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        jButton1.setVisible(false);
-        jButton2.setVisible(true);
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        jLabel3.setVisible(true);
-        jLabel4.setVisible(true);
+        Cards++;
+        if (Cards == 1) {
+            Card1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/A_Hertta.png")));
+        } else if (Cards == 2) {
+            Card2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/A_Pata.png")));
+        } else if (Cards == 3) {
+            Card3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/A_Ruutu.png")));
+        } else if (Cards == 4) {
+            Card4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/A_Risti.png")));
+        } else if (Cards == 5) {
+            Card5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/K_Hertta.png")));
+            jToggleButton1.setVisible(true);
+            jButton2.setVisible(false);
+            Cards = 0;
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+        if (jToggleButton1.isSelected()) {
+            jToggleButton1.setText("Clear");
+            jToggleButton1.setVisible(false);
+            jButton2.setVisible(true);
+            jButton2.doClick();
+        } else {
+            jToggleButton1.setText("Play");
+            Card1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+            Card2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+            Card3.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+            Card4.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+            Card5.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+        }
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,12 +170,15 @@ public class TexasHoldem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel Card1;
+    private javax.swing.JLabel Card2;
+    private javax.swing.JLabel Card3;
+    private javax.swing.JLabel Card4;
+    private javax.swing.JLabel Card5;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
