@@ -275,6 +275,7 @@ public class TexasHoldem extends javax.swing.JFrame {
             P5B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
             P5B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
         } else if (Cards == 2) {
+            
             while (true) {
                 Gender = CardShuffle.ShuffleGender();
                 Card = CardShuffle.ShuffleNum();
@@ -328,6 +329,7 @@ public class TexasHoldem extends javax.swing.JFrame {
             jToggleButton1.setVisible(true);
             jButton2.setVisible(false);
             Cards = 0;
+            
             P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
             P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
             P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
