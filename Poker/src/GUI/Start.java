@@ -37,6 +37,7 @@ public class Start extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("TexasHoldem Setup");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("Start");
@@ -83,6 +84,7 @@ public class Start extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
         new TexasHoldem().setVisible(true);
+        TexasHoldem.Bot(Bots);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -99,7 +101,7 @@ public class Start extends javax.swing.JFrame {
             Bots = 4;
         }
         jLabel1.setText(Integer.toString(Bots));
-
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

@@ -14,7 +14,7 @@ public class TexasHoldem extends javax.swing.JFrame {
     int Cards = 0;
     int Card = 1;
     int Gender = 1;
-    static int Bots;
+    static int Bots = 1;
 
     /**
      * Creates new form TexasHoldem
@@ -57,6 +57,7 @@ public class TexasHoldem extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
@@ -96,6 +97,14 @@ public class TexasHoldem extends javax.swing.JFrame {
         setTitle("Texas Holdem");
         setBackground(new java.awt.Color(0, 0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setText("Return");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -220,67 +229,15 @@ public class TexasHoldem extends javax.swing.JFrame {
 
         Cards++;
         if (Cards == 1) {
-            for (int i = 1; i <= Bots; i++) {
-
-                while (true) {
-                    Gender = CardShuffle.ShuffleGender();
-                    Card = CardShuffle.ShuffleNum();
-                    double luku = CardTest.PlayerCards(i, 1, Card, Gender);
-                    if (i == 1 && luku == 0) {
-                        P1C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
-                        break;
-                    } else if (i == 2 && luku == 0) {
-                        P2C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
-                        break;
-                    } else if (i == 3 && luku == 0) {
-                        if (Bots == 2) {
-                            P3C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
-                            break;
-                        }
-                    } else if (i == 4 && luku == 0) {
-                        if (Bots == 3) {
-                            P4C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
-                            break;
-                        }
-                    } else if (i == 5 && luku == 0) {
-                        if (Bots == 4) {
-                            P5C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
-                            break;
-                        }
-                    }
-
-                }
-
-                while (true) {
-                    Gender = CardShuffle.ShuffleGender();
-                    Card = CardShuffle.ShuffleNum();
-                    double luku = CardTest.PlayerCards(i, 2, Card, Gender);
-                    if (i == 1 && luku == 0) {
-                        P1C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
-                        break;
-                    } else if (i == 2 && luku == 0) {
-                        P2C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
-                        break;
-                    } else if (i == 3 && luku == 0) {
-                        P3C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
-                        break;
-                    } else if (i == 4 && luku == 0) {
-                        P4C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
-                        break;
-                    } else if (i == 5 && luku == 0) {
-                        P5C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
-                        break;
-                    }
-                }
+            if (Bots == 1) {
+                Bots1();
+            } else if (Bots == 2) {
+                Bots2();
+            } else if (Bots == 3) {
+                Bots3();
+            } else if (Bots == 4) {
+                Bots4();
             }
-            P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P4B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P4B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P5B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P5B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
         } else if (Cards == 2) {
 
             while (true) {
@@ -347,11 +304,193 @@ public class TexasHoldem extends javax.swing.JFrame {
             P5B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    public static void Bots(int val) {
+    public static void Bot(int val) {
         Bots = val;
     }
 
+    public void Bots1() {
+        for (int i = 1; i <= 2; i++) {
+
+            while (true) {
+                Gender = CardShuffle.ShuffleGender();
+                Card = CardShuffle.ShuffleNum();
+                double luku = CardTest.PlayerCards(i, 1, Card, Gender);
+                if (i == 1 && luku == 0) {
+                    P1C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 2 && luku == 0) {
+                    P2C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                }
+            }
+            while (true) {
+                Gender = CardShuffle.ShuffleGender();
+                Card = CardShuffle.ShuffleNum();
+                double luku = CardTest.PlayerCards(i, 2, Card, Gender);
+                if (i == 1 && luku == 0) {
+                    P1C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 2 && luku == 0) {
+                    P2C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                }
+            }
+            P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        }
+    }
+
+    public void Bots2() {
+        for (int i = 1; i <= 3; i++) {
+
+            while (true) {
+                Gender = CardShuffle.ShuffleGender();
+                Card = CardShuffle.ShuffleNum();
+                double luku = CardTest.PlayerCards(i, 1, Card, Gender);
+                if (i == 1 && luku == 0) {
+                    P1C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 2 && luku == 0) {
+                    P2C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 3 && luku == 0) {
+                    P3C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                }
+            }
+            while (true) {
+                Gender = CardShuffle.ShuffleGender();
+                Card = CardShuffle.ShuffleNum();
+                double luku = CardTest.PlayerCards(i, 2, Card, Gender);
+                if (i == 1 && luku == 0) {
+                    P1C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 2 && luku == 0) {
+                    P2C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 3 && luku == 0) {
+                    P3C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                }
+            }
+            P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        }
+    }
+
+    public void Bots3() {
+        for (int i = 1; i <= 4; i++) {
+
+            while (true) {
+                Gender = CardShuffle.ShuffleGender();
+                Card = CardShuffle.ShuffleNum();
+                double luku = CardTest.PlayerCards(i, 1, Card, Gender);
+                if (i == 1 && luku == 0) {
+                    P1C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 2 && luku == 0) {
+                    P2C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 3 && luku == 0) {
+                    P3C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 4 && luku == 0) {
+                    P4C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                }
+            }
+            while (true) {
+                Gender = CardShuffle.ShuffleGender();
+                Card = CardShuffle.ShuffleNum();
+                double luku = CardTest.PlayerCards(i, 2, Card, Gender);
+                if (i == 1 && luku == 0) {
+                    P1C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 2 && luku == 0) {
+                    P2C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 3 && luku == 0) {
+                    P3C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 4 && luku == 0) {
+                    P4C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                }
+            }
+            P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P4B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P4B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        }
+    }
+
+    public void Bots4() {
+        for (int i = 1; i <= 5; i++) {
+
+            while (true) {
+                Gender = CardShuffle.ShuffleGender();
+                Card = CardShuffle.ShuffleNum();
+                double luku = CardTest.PlayerCards(i, 1, Card, Gender);
+                if (i == 1 && luku == 0) {
+                    P1C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 2 && luku == 0) {
+                    P2C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 3 && luku == 0) {
+                    P3C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 4 && luku == 0) {
+                    P4C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 5 && luku == 0) {
+                    P5C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                }
+            }
+
+            while (true) {
+                Gender = CardShuffle.ShuffleGender();
+                Card = CardShuffle.ShuffleNum();
+                double luku = CardTest.PlayerCards(i, 2, Card, Gender);
+                if (i == 1 && luku == 0) {
+                    P1C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 2 && luku == 0) {
+                    P2C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 3 && luku == 0) {
+                    P3C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 4 && luku == 0) {
+                    P4C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                } else if (i == 5 && luku == 0) {
+                    P5C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                    break;
+                }
+            }
+
+            P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P4B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P4B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P5B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P5B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        }
+    }
+
+    public void Cards() {
+        for (int i = 1; i <= 5; i++) {
+            
+        }
+    }
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
         if (jToggleButton1.isSelected()) {
@@ -378,6 +517,12 @@ public class TexasHoldem extends javax.swing.JFrame {
             P5C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new Start().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -439,6 +584,7 @@ public class TexasHoldem extends javax.swing.JFrame {
     private javax.swing.JLabel P5B2;
     private javax.swing.JLabel P5C1;
     private javax.swing.JLabel P5C2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
