@@ -24,52 +24,145 @@ public class CardTest {
 
     public static int Test(int Card, int Num, int Gender) {
         if (Card == 1) {
-            Num1 = Num;
-            luku1 = Gender;
-        } else if (Card == 2) {
-            if (Num1 == Num && luku1 == Gender) {
+            if (p1Card1 == Num && p1luku1 == Gender) {
+                return 1;
+            } else if (p1Card2 == Num && p1luku2 == Gender) {
+                return 1;
+            } else if (p2Card1 == Num && p2luku1 == Gender) {
+                return 1;
+            } else if (p2Card2 == Num && p2luku2 == Gender) {
+                return 1;
+            } else if (p3Card1 == Num && p3luku1 == Gender) {
+                return 1;
+            } else if (p3Card2 == Num && p3luku2 == Gender) {
+                return 1;
+            } else if (p4Card1 == Num && p4luku1 == Gender) {
+                return 1;
+            } else if (p5Card1 == Num && p5luku1 == Gender) {
+                return 1;
+            } else if (p5Card2 == Num && p5luku2 == Gender) {
+                return 1;
+            } else {
+                Num1 = Num;
+                luku1 = Gender;
                 return 0;
+            }
+        } else if (Card == 2) {
+            if (p1Card1 == Num && p1luku1 == Gender) {
+                return 1;
+            } else if (p1Card2 == Num && p1luku2 == Gender) {
+                return 1;
+            } else if (p2Card1 == Num && p2luku1 == Gender) {
+                return 1;
+            } else if (p2Card2 == Num && p2luku2 == Gender) {
+                return 1;
+            } else if (p3Card1 == Num && p3luku1 == Gender) {
+                return 1;
+            } else if (p3Card2 == Num && p3luku2 == Gender) {
+                return 1;
+            } else if (p4Card1 == Num && p4luku1 == Gender) {
+                return 1;
+            } else if (p5Card1 == Num && p5luku1 == Gender) {
+                return 1;
+            } else if (p5Card2 == Num && p5luku2 == Gender) {
+                return 1;
+            } else if (Num1 == Num && luku1 == Gender) {
+                return 1;
             } else {
                 Num2 = Num;
                 luku2 = Gender;
-                return 1;
+                return 0;
             }
         } else if (Card == 3) {
-            if (Num1 == Num && luku1 == Gender) {
-                return 0;
-            } else if (Num2 == Num && luku2 == Gender) {
-                return 0;
-            } else {
-                Num3 = Num;
-                luku3 = Gender;
+            if (p1Card1 == Num && p1luku1 == Gender) {
                 return 1;
+            } else if (p1Card2 == Num && p1luku2 == Gender) {
+                return 1;
+            } else if (p2Card1 == Num && p2luku1 == Gender) {
+                return 1;
+            } else if (p2Card2 == Num && p2luku2 == Gender) {
+                return 1;
+            } else if (p3Card1 == Num && p3luku1 == Gender) {
+                return 1;
+            } else if (p3Card2 == Num && p3luku2 == Gender) {
+                return 1;
+            } else if (p4Card1 == Num && p4luku1 == Gender) {
+                return 1;
+            } else if (p5Card1 == Num && p5luku1 == Gender) {
+                return 1;
+            } else if (p5Card2 == Num && p5luku2 == Gender) {
+                return 1;
+            } else if (Num1 == Num && luku1 == Gender) {
+                return 1;
+            } else if (Num2 == Num && luku2 == Gender) {
+                return 1;
+            }else{
+                Num3 = Num;
+                luku4 = Gender;
+                return 0;
             }
         } else if (Card == 4) {
-            if (Num1 == Num && luku1 == Gender) {
-                return 0;
+            if (p1Card1 == Num && p1luku1 == Gender) {
+                return 1;
+            } else if (p1Card2 == Num && p1luku2 == Gender) {
+                return 1;
+            } else if (p2Card1 == Num && p2luku1 == Gender) {
+                return 1;
+            } else if (p2Card2 == Num && p2luku2 == Gender) {
+                return 1;
+            } else if (p3Card1 == Num && p3luku1 == Gender) {
+                return 1;
+            } else if (p3Card2 == Num && p3luku2 == Gender) {
+                return 1;
+            } else if (p4Card1 == Num && p4luku1 == Gender) {
+                return 1;
+            } else if (p5Card1 == Num && p5luku1 == Gender) {
+                return 1;
+            } else if (p5Card2 == Num && p5luku2 == Gender) {
+                return 1;
+            } else if (Num1 == Num && luku1 == Gender) {
+                return 1;
             } else if (Num2 == Num && luku2 == Gender) {
-                return 0;
-            } else if (Num3 == Num && luku3 == Gender) {
-                return 0;
-            } else {
+                return 1;
+            }else if (Num3 == Num && luku3 == Gender) {
+                return 1;
+            }else{
                 Num4 = Num;
                 luku4 = Gender;
-                return 1;
+                return 0;
             }
 
         } else if (Card == 5) {
-            if (Num1 == Num && luku1 == Gender) {
-                return 0;
+            if (p1Card1 == Num && p1luku1 == Gender) {
+                return 1;
+            } else if (p1Card2 == Num && p1luku2 == Gender) {
+                return 1;
+            } else if (p2Card1 == Num && p2luku1 == Gender) {
+                return 1;
+            } else if (p2Card2 == Num && p2luku2 == Gender) {
+                return 1;
+            } else if (p3Card1 == Num && p3luku1 == Gender) {
+                return 1;
+            } else if (p3Card2 == Num && p3luku2 == Gender) {
+                return 1;
+            } else if (p4Card1 == Num && p4luku1 == Gender) {
+                return 1;
+            } else if (p5Card1 == Num && p5luku1 == Gender) {
+                return 1;
+            } else if (p5Card2 == Num && p5luku2 == Gender) {
+                return 1;
+            } else if (Num1 == Num && luku1 == Gender) {
+                return 1;
             } else if (Num2 == Num && luku2 == Gender) {
-                return 0;
-            } else if (Num3 == Num && luku3 == Gender) {
-                return 0;
-            } else if (Num4 == Num && luku4 == Gender) {
-                return 0;
-            } else {
+                return 1;
+            }else if (Num3 == Num && luku3 == Gender) {
+                return 1;
+            }else if (Num4 == Num && luku4 == Gender){
+                return 1;
+            }else{
                 Num5 = Num;
                 luku5 = Gender;
-                return 1;
+                return 0;
             }
         }
         return 0;
@@ -229,9 +322,9 @@ public class CardTest {
                     return 5.2;
                 } else if (p4Card2 == Num && p4luku2 == Gender) {
                     return 5.2;
-                } else if(p5Card1 == Num && p5luku1 == Gender){
+                } else if (p5Card1 == Num && p5luku1 == Gender) {
                     return 5.2;
-                }else{
+                } else {
                     p5Card1 = Num;
                     p5luku1 = Gender;
                     return 0;

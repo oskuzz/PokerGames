@@ -28,6 +28,14 @@ public class TexasHoldem extends javax.swing.JFrame {
         Card5.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
         P1C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
         P1C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+        P2C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+        P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+        P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+        P2C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+        P3C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+        P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+        P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+        P3C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
 
     }
 
@@ -44,8 +52,19 @@ public class TexasHoldem extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
         CardStack = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        P2B2 = new javax.swing.JLabel();
+        P2B1 = new javax.swing.JLabel();
+        P2C2 = new javax.swing.JLabel();
+        P2C1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         P1C2 = new javax.swing.JLabel();
         P1C1 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        P3B2 = new javax.swing.JLabel();
+        P3B1 = new javax.swing.JLabel();
+        P3C2 = new javax.swing.JLabel();
+        P3C1 = new javax.swing.JLabel();
         Card5 = new javax.swing.JLabel();
         Card4 = new javax.swing.JLabel();
         Card3 = new javax.swing.JLabel();
@@ -70,24 +89,63 @@ public class TexasHoldem extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 30, -1, -1));
 
-        jToggleButton1.setText("Play");
+        jToggleButton1.setText("Ready");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 70, -1, -1));
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 70, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 800, 110));
 
         CardStack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardStack.png"))); // NOI18N
         getContentPane().add(CardStack, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 206, -1, -1));
 
+        jPanel2.setOpaque(false);
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png"))); // NOI18N
+        jPanel2.add(P2B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 10, -1, -1));
+
+        P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png"))); // NOI18N
+        jPanel2.add(P2B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 10, -1, -1));
+
+        P2C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/1_2.png"))); // NOI18N
+        jPanel2.add(P2C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 10, -1, -1));
+
+        P2C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/1_1.png"))); // NOI18N
+        jPanel2.add(P2C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 10, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 90, 80));
+
+        jPanel3.setOpaque(false);
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         P1C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/1_2.png"))); // NOI18N
-        getContentPane().add(P1C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, -1, -1));
+        jPanel3.add(P1C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 10, -1, -1));
 
         P1C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/1_1.png"))); // NOI18N
-        getContentPane().add(P1C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, -1, -1));
+        jPanel3.add(P1C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 10, -1, -1));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 90, 80));
+
+        jPanel4.setOpaque(false);
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png"))); // NOI18N
+        jPanel4.add(P3B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 10, -1, -1));
+
+        P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png"))); // NOI18N
+        jPanel4.add(P3B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 10, -1, -1));
+
+        P3C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/1_2.png"))); // NOI18N
+        jPanel4.add(P3C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 10, -1, -1));
+
+        P3C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/1_1.png"))); // NOI18N
+        jPanel4.add(P3C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 10, -1, -1));
+
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 90, 80));
         getContentPane().add(Card5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 206, -1, 70));
         getContentPane().add(Card4, new org.netbeans.lib.awtextra.AbsoluteConstraints(426, 206, -1, 70));
         getContentPane().add(Card3, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 206, -1, 70));
@@ -109,30 +167,57 @@ public class TexasHoldem extends javax.swing.JFrame {
 
         Cards++;
         if (Cards == 1) {
-
             for (int i = 1; i <= 5; i++) {
 
                 while (true) {
                     Gender = CardShuffle.ShuffleGender();
                     Card = CardShuffle.ShuffleNum();
                     double luku = CardTest.PlayerCards(i, 1, Card, Gender);
-                    if (luku == 0) {
+                    if (i == 1 && luku == 0) {
                         P1C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
                         break;
+                    } else if (i == 2 && luku == 0) {
+                        P2C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                        break;
+                    } else if (i == 3 && luku == 0) {
+                        P3C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                        break;
+                    } else if (i == 4 && luku == 0) {
+                        //P4C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                        break;
+                    } else if (i == 5 && luku == 0) {
+                        //P5C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                        break;
                     }
+
                 }
 
                 while (true) {
                     Gender = CardShuffle.ShuffleGender();
                     Card = CardShuffle.ShuffleNum();
                     double luku = CardTest.PlayerCards(i, 2, Card, Gender);
-                    if (luku == 0) {
+                    if (i == 1 && luku == 0) {
                         P1C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                        break;
+                    } else if (i == 2 && luku == 0) {
+                        P2C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                        break;
+                    } else if (i == 3 && luku == 0) {
+                        P3C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                        break;
+                    } else if (i == 4 && luku == 0) {
+                        //P4C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
+                        break;
+                    } else if (i == 5 && luku == 0) {
+                        //P5C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/" + Card + "_" + Gender + ".png")));
                         break;
                     }
                 }
             }
-
+            P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+            P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
         } else if (Cards == 2) {
             Gender = CardShuffle.ShuffleGender();
             Card = CardShuffle.ShuffleNum();
@@ -161,6 +246,10 @@ public class TexasHoldem extends javax.swing.JFrame {
             jToggleButton1.setVisible(true);
             jButton2.setVisible(false);
             Cards = 0;
+            P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+            P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+            P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+            P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -172,7 +261,7 @@ public class TexasHoldem extends javax.swing.JFrame {
             jButton2.setVisible(true);
             jButton2.doClick();
         } else {
-            jToggleButton1.setText("Play");
+            jToggleButton1.setText("Ready");
             Card1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
             Card2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
             Card3.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
@@ -180,6 +269,10 @@ public class TexasHoldem extends javax.swing.JFrame {
             Card5.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
             P1C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
             P1C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+            P2C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+            P2C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+            P3C1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
+            P3C2.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -227,10 +320,21 @@ public class TexasHoldem extends javax.swing.JFrame {
     private javax.swing.JLabel CardStack;
     private javax.swing.JLabel P1C1;
     private javax.swing.JLabel P1C2;
+    private javax.swing.JLabel P2B1;
+    private javax.swing.JLabel P2B2;
+    private javax.swing.JLabel P2C1;
+    private javax.swing.JLabel P2C2;
+    private javax.swing.JLabel P3B1;
+    private javax.swing.JLabel P3B2;
+    private javax.swing.JLabel P3C1;
+    private javax.swing.JLabel P3C2;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
