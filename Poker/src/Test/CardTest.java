@@ -15,9 +15,6 @@ public class CardTest {
     static int Num2, luku2;
     static int Num3, luku3;
     static int Num4, luku4;
-    static int Num5, luku5;
-    static int p1Card1, p1Card2;
-    static int p2Card1, p2Card2;
 
     public static int Test(int Card, int Num, int Gender) {
         if (Card == 1) {
@@ -62,7 +59,7 @@ public class CardTest {
             } else if (Num3 == Num && luku3 == Gender) {
                 return 0;
             } else if(Num4 == Num && luku4 == Gender){
-                return 0;
+                
             }else{
                 return 1;
             }
