@@ -14,7 +14,7 @@ import java.util.Random;
 public class CardShuffle {
     public static int ShuffleNum() {
         int START = 1;
-        int END = 14;
+        int END = 13;
         Random random = new Random();
         int number = showRandomInteger(START, END, random);
 
