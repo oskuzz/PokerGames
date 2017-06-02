@@ -10,19 +10,24 @@ package GUI;
  * @author osku0
  */
 public class PlayerTurn {
-    public static int Turn1(){
+
+    public static int Turn1() {
         return 1;
     }
-    public static int Turn2(){
+
+    public static int Turn2() {
         return 1;
     }
-    public static int Turn3(){
+
+    public static int Turn3() {
         return 1;
     }
-    public static int Turn4(){
+
+    public static int Turn4() {
         return 1;
     }
-    public static int Turn5(){
+
+    public static int Turn5() {
         return 1;
     }
 }
