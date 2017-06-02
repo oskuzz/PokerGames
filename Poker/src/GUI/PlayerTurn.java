@@ -12,6 +12,7 @@ package GUI;
 public class PlayerTurn {
 
     public static int Turn1() {
+        
         return 1;
     }
 
