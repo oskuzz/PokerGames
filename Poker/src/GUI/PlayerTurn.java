@@ -13,11 +13,6 @@ import java.util.Random;
  */
 public class PlayerTurn {
 
-    public static int Player() {
-
-        return 1;
-    }
-
     public static int Bot1(String Tcard1, String Tcard2, String Tcard3, String Tcard4, String Tcard5, String Hcard1, String Hcard2) {
         if (Tcard4.equals("0") || Tcard5.equals("0")) {
             for (int i = 0; i < 4; i++) {
