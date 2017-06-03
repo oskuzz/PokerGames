@@ -1,16 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package GUI;
 
 import java.util.Random;
 
-/**
- *
- * @author osku0
- */
 public class PlayerTurn {
 
     public static int Bot1(String Tcard1, String Tcard2, String Tcard3, String Tcard4, String Tcard5, String Hcard1, String Hcard2) {
@@ -2045,7 +2037,16 @@ public class PlayerTurn {
         }
         return 1;
     }
-
+    
+    
+    public static int Bot1_1(){
+        
+        
+        return 1;
+        
+    }
+    
+    
     public static int random(int END) {
         int START = 1;
         Random random = new Random();
