@@ -34,6 +34,9 @@ public class TexasHoldem extends javax.swing.JFrame {
     int Pot = 0;
     int Bank = 0;
     int Bet = 0;
+    int SmallBlind = 2;
+    int BigBlind = 4;
+    int Dealer = 0;
 
     /**
      * Creates new form TexasHoldem
@@ -86,7 +89,14 @@ public class TexasHoldem extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         CardStack = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         P5B2 = new javax.swing.JLabel();
         P5B1 = new javax.swing.JLabel();
@@ -168,10 +178,21 @@ public class TexasHoldem extends javax.swing.JFrame {
         jLabel6.setText("0");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 50, -1));
 
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+
+        jButton3.setText("Fold");
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 800, 110));
 
         CardStack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardStack.png"))); // NOI18N
         getContentPane().add(CardStack, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 206, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 185, -1, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 185, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
 
         jPanel6.setOpaque(false);
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -387,10 +408,13 @@ public class TexasHoldem extends javax.swing.JFrame {
                     break;
                 }
             }
-            CardWinTest.HandCards1(Double.parseDouble(Hcard1), Double.parseDouble(Hcard2), Double.parseDouble(Hcard3), Double.parseDouble(Hcard4));
-            P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+
         }
+        CardWinTest.HandCards1(Double.parseDouble(Hcard1), Double.parseDouble(Hcard2), Double.parseDouble(Hcard3), Double.parseDouble(Hcard4));
+        int joku = PlayerTurn.Bot1("0", "0", "0", "0", "0", Hcard3, Hcard4);
+        System.out.println("Bot1: " + joku);
+        P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
     }
 
     public void Bots2() {
@@ -432,12 +456,17 @@ public class TexasHoldem extends javax.swing.JFrame {
                     break;
                 }
             }
-            CardWinTest.HandCards2(Double.parseDouble(Hcard1), Double.parseDouble(Hcard2), Double.parseDouble(Hcard3), Double.parseDouble(Hcard4), Double.parseDouble(Hcard5), Double.parseDouble(Hcard6));
-            P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+
         }
+        CardWinTest.HandCards2(Double.parseDouble(Hcard1), Double.parseDouble(Hcard2), Double.parseDouble(Hcard3), Double.parseDouble(Hcard4), Double.parseDouble(Hcard5), Double.parseDouble(Hcard6));
+        int joku = PlayerTurn.Bot1("0", "0", "0", "0", "0", Hcard3, Hcard4);
+        int joku2 = PlayerTurn.Bot2("0", "0", "0", "0", "0", Hcard5, Hcard6);
+        System.out.println("Bot1: " + joku);
+        System.out.println("Bot2: " + joku2);
+        P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
     }
 
     public void Bots3() {
@@ -487,14 +516,21 @@ public class TexasHoldem extends javax.swing.JFrame {
                     break;
                 }
             }
-            CardWinTest.HandCards3(Double.parseDouble(Hcard1), Double.parseDouble(Hcard2), Double.parseDouble(Hcard3), Double.parseDouble(Hcard4), Double.parseDouble(Hcard5), Double.parseDouble(Hcard6), Double.parseDouble(Hcard7), Double.parseDouble(Hcard8));
-            P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P4B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P4B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+
         }
+        CardWinTest.HandCards3(Double.parseDouble(Hcard1), Double.parseDouble(Hcard2), Double.parseDouble(Hcard3), Double.parseDouble(Hcard4), Double.parseDouble(Hcard5), Double.parseDouble(Hcard6), Double.parseDouble(Hcard7), Double.parseDouble(Hcard8));
+        int joku = PlayerTurn.Bot1("0", "0", "0", "0", "0", Hcard3, Hcard4);
+        int joku2 = PlayerTurn.Bot2("0", "0", "0", "0", "0", Hcard5, Hcard6);
+        int joku3 = PlayerTurn.Bot3("0", "0", "0", "0", "0", Hcard7, Hcard8);
+        System.out.println("Bot1: " + joku);
+        System.out.println("Bot2: " + joku2);
+        System.out.println("Bot3: " + joku3);
+        P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P4B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P4B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
     }
 
     public void Bots4() {
@@ -553,28 +589,53 @@ public class TexasHoldem extends javax.swing.JFrame {
                     break;
                 }
             }
-            CardWinTest.HandCards4(Double.parseDouble(Hcard1), Double.parseDouble(Hcard2), Double.parseDouble(Hcard3), Double.parseDouble(Hcard4), Double.parseDouble(Hcard5), Double.parseDouble(Hcard6), Double.parseDouble(Hcard7), Double.parseDouble(Hcard8), Double.parseDouble(Hcard9), Double.parseDouble(Hcard10));
-            P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P4B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P4B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P5B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
-            P5B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+
         }
+        CardWinTest.HandCards4(Double.parseDouble(Hcard1), Double.parseDouble(Hcard2), Double.parseDouble(Hcard3), Double.parseDouble(Hcard4), Double.parseDouble(Hcard5), Double.parseDouble(Hcard6), Double.parseDouble(Hcard7), Double.parseDouble(Hcard8), Double.parseDouble(Hcard9), Double.parseDouble(Hcard10));
+        int joku = PlayerTurn.Bot1("0", "0", "0", "0", "0", Hcard3, Hcard4);
+        int joku2 = PlayerTurn.Bot2("0", "0", "0", "0", "0", Hcard5, Hcard6);
+        int joku3 = PlayerTurn.Bot3("0", "0", "0", "0", "0", Hcard7, Hcard8);
+        int joku4 = PlayerTurn.Bot4("0", "0", "0", "0", "0", Hcard9, Hcard10);
+        System.out.println("Bot1: " + joku);
+        System.out.println("Bot2: " + joku2);
+        System.out.println("Bot3: " + joku3);
+        System.out.println("Bot4: " + joku4);
+        P2B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P2B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P3B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P3B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P4B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P4B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P5B1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
+        P5B2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PlayCards/PlayCardBack.png")));
     }
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
         if (jToggleButton1.isSelected()) {
-            jToggleButton1.setText("Clear");
-            jToggleButton1.setVisible(false);
-            jButton2.setVisible(true);
-            Bank = Integer.parseInt(jTextField1.getText()) - (Bet = Integer.parseInt(jTextField2.getText()));;
-            jLabel6.setText(Integer.toString(Bet * Bots + Bet));
-            jButton2.doClick();
+            if (jTextField1.getText().equals("")) {
+                jLabel7.setText("Cash is empty!");
+                jToggleButton1.doClick();
+            } else if (jTextField2.getText().equals("")) {
+                jLabel7.setText("Bet is empty!");
+                jToggleButton1.doClick();
+            } else {
+                jTextField1.setEditable(false);
+                jLabel7.setText("");
+                jToggleButton1.setText("Clear");
+                jToggleButton1.setVisible(false);
+                jButton2.setVisible(true);
 
+                Bank = Integer.parseInt(jTextField1.getText()) - (Bet = Integer.parseInt(jTextField2.getText()));
+                jTextField1.setText(Integer.toString(Bank));
+                jLabel6.setText(Integer.toString(Bet * Bots + Bet));
+                jLabel9.setText(Integer.toString(Bet) + " €");
+                jLabel10.setText("10 €");
+                jLabel8.setText("10 €");
+                jLabel11.setText("10 €");
+                jLabel12.setText("10 €");
+                jButton2.doClick();
+            }
         } else {
             jToggleButton1.setText("Ready");
             Card1.setIcon(new javax.swing.ImageIcon(getClass().getResource("")));
@@ -663,12 +724,19 @@ public class TexasHoldem extends javax.swing.JFrame {
     private javax.swing.JLabel P5C2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
